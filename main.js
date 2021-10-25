@@ -26,22 +26,31 @@ const request = async()=>{
 
 } 
 request() 
-
-
+let time;
+const divId =document.getElementById('divId')
 function runTimeout(){
-    alert('The timeout has been started')
-    setTimeout(alartRun(), 3000)
-
+  const div =document.createElement('div');
+  div.innerHTML=`<h1> The timeout has been started</h1>`
+  divId.appendChild(div);
+  time=setTimeout(alartRun, 3000)
 };
 function alartRun() {
-    alert("The timeout has been triggered!");
+   const div=document.createElement('div')
+   div.innerHTML=`<h1 style='color:green'>The timeout has been triggered!</h1> `
+   divId.appendChild(div);
+
   };
 
 
   function clear(){   
-       alert("The timeout has been cleared");
+       const div=document.createElement('div')
+       div.innerHTML=`<h1 >The timeout has been cleared"!</h1> `
 
-    clearTimeout(setTimeout())
+           clearTimeout(time)
+
+         divId.appendChild(div);
+    
+
   }
 
 
